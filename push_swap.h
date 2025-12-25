@@ -6,7 +6,7 @@
 /*   By: mlaktaou <mlaktaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 09:00:07 by mlaktaou          #+#    #+#             */
-/*   Updated: 2025/12/25 11:38:11 by mlaktaou         ###   ########.fr       */
+/*   Updated: 2025/12/25 12:43:06 by mlaktaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <limits.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 # define ERROR_NUM 9223372036854775807
 

@@ -6,7 +6,7 @@
 /*   By: mlaktaou <mlaktaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:03:38 by mlaktaou          #+#    #+#             */
-/*   Updated: 2025/12/25 11:36:50 by mlaktaou         ###   ########.fr       */
+/*   Updated: 2025/12/25 21:28:45 by mlaktaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,12 @@ int	ft_atoi(const char *number)
 	while (number[i] >= '0' && number[i] <= '9')
 	{
 		result = (result * 10) + (number[i] - '0');
+		if (result > 2147483647 || (result > 2147483648 && number[0] == '-'))
+			return (ERROR_NUM);
 		i++;
 	}
 	result *= sign;
-	if (result > INT_MAX || result < INT_MIN)
-		return (ERROR_NUM);
+	if (result > 2147483647 || result < -2147483648)
+			return (ERROR_NUM);
 	return (result);
 }

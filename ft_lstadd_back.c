@@ -18,10 +18,10 @@ int	ft_lstadd_back(s_node **list, char *content)
 	s_node	*curr;
 
 	if (!list || !content || !ft_args_checker(content))
-		return 0;
+		return (0);
 	new_node = malloc(sizeof(s_node));
 	if (!new_node)
-		return 0;
+		return (0);
 	new_node -> value = ft_atoi(content);
 	new_node -> next = NULL;
 	if (*list == NULL)
