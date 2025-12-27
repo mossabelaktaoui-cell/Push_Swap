@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-void	ra(s_node **stack_a, int print)
+void	ra(t_node **stack_a, int print)
 {
-	s_node	*tmp;
-	s_node	*curr;
+	t_node	*tmp;
+	t_node	*curr;
 
-	if (*stack_a && (*stack_a) -> next)
+	if (*stack_a && (*stack_a)-> next)
 	{
 		tmp = *stack_a;
-		*stack_a = (*stack_a) -> next;
+		*stack_a = (*stack_a)-> next;
 		curr = *stack_a;
 		while (curr -> next != NULL)
 			curr = curr -> next;
@@ -31,15 +31,15 @@ void	ra(s_node **stack_a, int print)
 	}
 }
 
-void	rb(s_node **stack_b, int print)
+void	rb(t_node **stack_b, int print)
 {
-	s_node	*tmp;
-	s_node	*curr;
+	t_node	*tmp;
+	t_node	*curr;
 
-	if (*stack_b && (*stack_b) -> next)
+	if (*stack_b && (*stack_b)-> next)
 	{
 		tmp = *stack_b;
-		*stack_b = (*stack_b) -> next;
+		*stack_b = (*stack_b)-> next;
 		curr = *stack_b;
 		while (curr -> next != NULL)
 			curr = curr -> next;
@@ -50,10 +50,10 @@ void	rb(s_node **stack_b, int print)
 	}
 }
 
-void	rr(s_node **stack_a, s_node **stack_b)
+void	rr(t_node **stack_a, t_node **stack_b)
 {
 	ra(stack_a, 0);
 	rb(stack_b, 0);
-	if ((*stack_a && (*stack_a) -> next) || (*stack_b && (*stack_b) -> next))
+	if ((*stack_a && (*stack_a)-> next) || (*stack_b && (*stack_b)-> next))
 		write(1, "rr\n", 3);
 }

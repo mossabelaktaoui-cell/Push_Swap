@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-void	sort_five(s_node **stack_a, s_node **stack_b)
+void	sort_five(t_node **stack_a, t_node **stack_b)
 {
 	int	min_index;
 	int	size;
 
-	if(is_sorted(*stack_a))
+	if (is_sorted(*stack_a))
 		return ;
 	while (get_stack_size(*stack_a) > 3)
 	{

@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-s_node	*find_max_node(s_node *stack)
+t_node	*find_max_node(t_node *stack)
 {
-	s_node	*current;
-	s_node *max_node;
-	int	max_index;
+	t_node	*current;
+	t_node	*max_node;
+	int		max_index;
 
 	current = stack;
 	max_index = current -> index;
@@ -33,10 +33,10 @@ s_node	*find_max_node(s_node *stack)
 	return (max_node);
 }
 
-int	get_node_index(s_node *stack, s_node *max_node)
+int	get_node_index(t_node *stack, t_node *max_node)
 {
-	s_node *current;
-	int	index;
+	t_node	*current;
+	int		index;
 
 	current = stack;
 	index = 0;
@@ -45,17 +45,17 @@ int	get_node_index(s_node *stack, s_node *max_node)
 		if (current == max_node)
 			return (index);
 		index++;
-		current = current -> next;		
+		current = current -> next;
 	}
 	return (-1);
 }
 
-int	find_max_index(s_node *stack)
+int	find_max_index(t_node *stack)
 {
-	s_node	*current;
-	int	max_index;
-	int	curr_index;
-	int	max_value;
+	t_node	*current;
+	int		max_index;
+	int		curr_index;
+	int		max_value;
 
 	current = stack;
 	max_value = current -> value;
@@ -74,12 +74,12 @@ int	find_max_index(s_node *stack)
 	return (max_index);
 }
 
-int	find_min_index(s_node *stack)
+int	find_min_index(t_node *stack)
 {
-	s_node	*current;
-	int	min_index;
-	int	curr_index;
-	int	min_value;
+	t_node	*current;
+	int		min_index;
+	int		curr_index;
+	int		min_value;
 
 	current = stack;
 	min_value = current -> value;

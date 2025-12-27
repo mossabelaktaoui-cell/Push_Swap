@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-s_node	*fill_linked_list(char **argv, int argc)
+t_node	*fill_linked_list(char **argv, int argc)
 {
-	s_node	*stack;
-	int	i;
+	t_node	*stack;
+	int		i;
 
 	i = 1;
 	stack = NULL;
@@ -28,10 +28,10 @@ s_node	*fill_linked_list(char **argv, int argc)
 	return (stack);
 }
 
-int	get_stack_size(s_node *stack)
+int	get_stack_size(t_node *stack)
 {
-	s_node	*current;
-	int	count;
+	t_node	*current;
+	int		count;
 
 	current = stack;
 	count = 0;
@@ -40,30 +40,18 @@ int	get_stack_size(s_node *stack)
 		count++;
 		current = current -> next;
 	}
-	return (count);	
+	return (count);
 }
 
-s_node	*ft_lstnew(void *value)
+int	ft_lstadd_back(t_node **list, char *number)
 {
-	s_node	*node;
-
-	node = malloc(sizeof(s_node));
-	if (!node)
-		return (NULL);
-	node -> value = value;
-	node -> next = NULL;
-	return (node);
-}
-
-int	ft_lstadd_back(s_node **list, char *number)
-{
-	s_node	*new_node;
-	s_node	*current;
-	int	value;
+	t_node	*new_node;
+	t_node	*current;
+	int		value;
 
 	if (!list || !number || !ft_args_checker(number))
 		return (0);
-	new_node = malloc(sizeof(s_node));
+	new_node = malloc(sizeof(t_node));
 	if (!new_node)
 		return (0);
 	value = ft_atoi(number);
@@ -83,10 +71,10 @@ int	ft_lstadd_back(s_node **list, char *number)
 	return (1);
 }
 
-void	free_stack(s_node **stack)
+void	free_stack(t_node **stack)
 {
-	s_node	*current;
-	s_node	*tmp;
+	t_node	*current;
+	t_node	*tmp;
 
 	if (!stack || !*stack)
 		return ;

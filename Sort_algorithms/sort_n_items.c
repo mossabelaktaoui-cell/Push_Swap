@@ -11,12 +11,11 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	set_index(s_node *stack, int *array, int size)
+void	set_index(t_node *stack, int *array, int size)
 {
-	int	i;
-	s_node *current;
-	
-	
+	int		i;
+	t_node	*current;
+
 	current = stack;
 	while (current != NULL)
 	{
@@ -24,25 +23,25 @@ void	set_index(s_node *stack, int *array, int size)
 		while (i < size)
 		{
 			if (array[i] == current -> value)
-			current -> index = i;
+				current -> index = i;
 			i++;
 		}
 		current = current -> next;
 	}
 }
 
-void	indexing(s_node *stack)
+void	indexing(t_node *stack)
 {
-	int	*array;
-	s_node	*current;
-	int	size;
-	int	i;
-	
+	int		*array;
+	int		size;
+	int		i;
+	t_node	*current;
+
 	current = stack;
 	size = get_stack_size(stack);
 	array = malloc(size * sizeof(int));
 	if (!array)
-	return ;
+		return ;
 	i = 0;
 	while (i < size && current != NULL)
 	{
@@ -54,9 +53,9 @@ void	indexing(s_node *stack)
 	free(array);
 }
 
-void	chunking(s_node **stack_a, s_node **stack_b)
+void	chunking(t_node **stack_a, t_node **stack_b)
 {
-	int	(i), (range), (size);
+	int (i), (range), (size);
 	i = 0;
 	size = get_stack_size(*stack_a);
 	if (size <= 100)
@@ -65,12 +64,12 @@ void	chunking(s_node **stack_a, s_node **stack_b)
 		range = 30;
 	while (*stack_a != NULL)
 	{
-		if ((*stack_a) -> index <= i)
+		if ((*stack_a)-> index <= i)
 		{
 			pb(stack_a, stack_b);
 			i++;
 		}
-		else if ((*stack_a) -> index <= (range + i))
+		else if ((*stack_a)-> index <= (range + i))
 		{
 			pb(stack_a, stack_b);
 			rb(stack_b, 1);
@@ -81,11 +80,11 @@ void	chunking(s_node **stack_a, s_node **stack_b)
 	}
 }
 
-void	push_back_to_a(s_node **stack_a, s_node **stack_b)
+void	push_back_to_a(t_node **stack_a, t_node **stack_b)
 {
-	s_node	*max_node;
-	int	max_node_index;
-	int	size;
+	t_node	*max_node;
+	int		max_node_index;
+	int		size;
 
 	while (*stack_b != NULL)
 	{
@@ -103,7 +102,7 @@ void	push_back_to_a(s_node **stack_a, s_node **stack_b)
 	}
 }
 
-void	sort_n_items(s_node **stack_a, s_node **stack_b)
+void	sort_n_items(t_node **stack_a, t_node **stack_b)
 {
 	indexing(*stack_a);
 	chunking(stack_a, stack_b);

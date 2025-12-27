@@ -12,30 +12,30 @@
 
 #include "push_swap.h"
 
-void    push_swap(s_node **stack_a, s_node **stack_b)
+void	push_swap(t_node **stack_a, t_node **stack_b)
 {
-    int	size;
+	int	size;
 
-    size = get_stack_size(*stack_a);
-    if (size <= 1 || is_sorted(*stack_a))
-        return ;
-    if (size == 2)
-        sa(stack_a, 1);
-    else if (size == 3)
-        sort_three(stack_a);
-    else if (size <= 5)
-        sort_five(stack_a, stack_b);
-    else
-        sort_n_items(stack_a, stack_b);
+	size = get_stack_size(*stack_a);
+	if (size <= 1 || is_sorted(*stack_a))
+		return ;
+	if (size == 2)
+		sa(stack_a, 1);
+	else if (size == 3)
+		sort_three(stack_a);
+	else if (size <= 5)
+		sort_five(stack_a, stack_b);
+	else
+		sort_n_items(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
 {
-	s_node	*stack_a;
-	s_node	*stack_b;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
 	if (argc < 2)
-        	return (0);
+		return (0);
 	if (!ft_args_checker(argv))
 	{
 		write(2, "Error\n", 6);

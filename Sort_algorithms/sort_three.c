@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sort_three(s_node **stack)
+void	sort_three(t_node **stack)
 {
 	int	max_index;
 
@@ -23,6 +23,6 @@ void	sort_three(s_node **stack)
 		ra(stack, 1);
 	else if (max_index == 1)
 		rra(stack, 1);
-	if ((*stack) -> value > (*stack) -> next -> value)
+	if ((*stack)-> value > (*stack)-> next -> value)
 		sa(stack, 1);
 }
