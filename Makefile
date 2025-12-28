@@ -1,10 +1,11 @@
 NAME        = push_swap
 
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror
+CFLAGS      = -Wall -Wextra -Werror -g
 
 SRCS        = push_swap.c \
               Helper_functions/checking.c \
+              Helper_functions/ft_split.c \
               Helper_functions/finding.c \
               Helper_functions/linked_list.c \
               Helper_functions/sorting.c \

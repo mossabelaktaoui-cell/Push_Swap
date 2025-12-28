@@ -22,7 +22,7 @@ t_node	*fill_linked_list(char **argv, int argc)
 	while (i < argc)
 	{
 		if (!ft_lstadd_back(&stack, argv[i]))
-			return (NULL);
+			return (free_stack(&stack), NULL);
 		i++;
 	}
 	return (stack);
@@ -33,6 +33,8 @@ int	get_stack_size(t_node *stack)
 	t_node	*current;
 	int		count;
 
+	if (!stack)
+		return (0);
 	current = stack;
 	count = 0;
 	while (current != NULL)
@@ -47,7 +49,7 @@ int	ft_lstadd_back(t_node **list, char *number)
 {
 	t_node	*new_node;
 	t_node	*current;
-	int		value;
+	long		value;
 
 	if (!list || !number)
 		return (0);
@@ -56,7 +58,7 @@ int	ft_lstadd_back(t_node **list, char *number)
 		return (0);
 	value = ft_atoi(number);
 	if (value == ERROR_NUM)
-		return (0);
+		return (free(new_node), 0);
 	new_node -> value = value;
 	new_node -> next = NULL;
 	if (*list == NULL)

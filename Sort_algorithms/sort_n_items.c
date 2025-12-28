@@ -30,7 +30,7 @@ void	set_index(t_node *stack, int *array, int size)
 	}
 }
 
-void	indexing(t_node *stack)
+int	indexing(t_node *stack)
 {
 	int		*array;
 	int		size;
@@ -41,16 +41,18 @@ void	indexing(t_node *stack)
 	size = get_stack_size(stack);
 	array = malloc(size * sizeof(int));
 	if (!array)
-		return ;
+		return (0);
 	i = 0;
 	while (i < size && current != NULL)
 	{
 		array[i] = current -> value;
 		current = current -> next;
+		i++;
 	}
 	sort_array(array, size);
 	set_index(stack, array, size);
 	free(array);
+	return (1);
 }
 
 void	chunking(t_node **stack_a, t_node **stack_b)
@@ -62,14 +64,14 @@ void	chunking(t_node **stack_a, t_node **stack_b)
 		range = 15;
 	else if (size <= 500)
 		range = 30;
-	while (*stack_a != NULL)
+	while ((*stack_a) != NULL)
 	{
 		if ((*stack_a)-> index <= i)
 		{
 			pb(stack_a, stack_b);
 			i++;
 		}
-		else if ((*stack_a)-> index < (range + i))
+		else if ((*stack_a)-> index <= (range + i))
 		{
 			pb(stack_a, stack_b);
 			rb(stack_b, 1);
@@ -93,6 +95,8 @@ void	push_back_to_a(t_node **stack_a, t_node **stack_b)
 		max_node_index = get_node_index(*stack_b, max_node);
 		while (*stack_b != max_node)
 		{
+			if (!max_node)
+				return ;
 			if (max_node_index <= size / 2)
 				rb(stack_b, 1);
 			else
@@ -104,7 +108,8 @@ void	push_back_to_a(t_node **stack_a, t_node **stack_b)
 
 void	sort_n_items(t_node **stack_a, t_node **stack_b)
 {
-	indexing(*stack_a);
+	if (!indexing(*stack_a))
+		return ;
 	chunking(stack_a, stack_b);
 	push_back_to_a(stack_a, stack_b);
 }

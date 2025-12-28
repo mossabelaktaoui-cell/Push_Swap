@@ -29,7 +29,6 @@ typedef struct t_node
 t_node	*find_max_node(t_node *stack);
 t_node	*fill_linked_list(char **argv, int argc);
 int		ft_args_checker(char **argv);
-int		ft_atoi(const char *number);
 int		find_max_index(t_node *stack);
 int		find_min_index(t_node *stack);
 int		is_sorted(t_node *stack);
@@ -37,11 +36,14 @@ int		get_stack_size(t_node *stack);
 int		get_node_index(t_node *stack, t_node *max_node);
 int		duplicate_checker(t_node *stack);
 int		ft_lstadd_back(t_node **list, char *number);
+long		ft_atoi(const char *number);
 void	sort_array(int *array, int size);
 void	free_stack(t_node **stack);
+char	**ft_split(char const *s, char c);
+char	**handle_input(int argc, char **argv);
 
+int		indexing(t_node *stack);
 void	set_index(t_node *stack, int *array, int size);
-void	indexing(t_node *stack);
 void	chunking(t_node **stack_a, t_node **stack_b);
 void	push_back_to_a(t_node **stack_a, t_node **stack_b);
 

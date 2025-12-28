@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	ft_atoi(const char *number)
+long	ft_atoi(const char *number)
 {
 	int			i;
 	int			sign;
@@ -37,7 +37,7 @@ int	ft_atoi(const char *number)
 	}
 	result *= sign;
 	if (result > INT_MAX || result < -2147483648L)
-		return (write(2, "Error\n", 6), ERROR_NUM);
+		return (ERROR_NUM);
 	return (result);
 }
 
@@ -83,4 +83,15 @@ int	duplicate_checker(t_node *stack)
 		checker = checker -> next;
 	}
 	return (1);
+}
+
+char	**handle_input(int argc, char **argv)
+{
+	char	**result;
+
+	if (argc == 2)
+		result = ft_split(argv[1], ' ');
+	else
+		result = argv + 1;
+	return (result);
 }

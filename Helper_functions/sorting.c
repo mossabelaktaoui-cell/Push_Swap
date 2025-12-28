@@ -6,7 +6,7 @@
 /*   By: mlaktaou <mlaktaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 21:17:50 by mlaktaou          #+#    #+#             */
-/*   Updated: 2025/12/27 13:14:19 by mlaktaou         ###   ########.fr       */
+/*   Updated: 2025/12/28 13:01:43 by mlaktaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	sort_array(int *array, int size)
 	int	tmp;
 
 	i = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
 		j = i + 1;
 		while (j < size)

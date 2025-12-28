@@ -18,6 +18,8 @@ t_node	*find_max_node(t_node *stack)
 	t_node	*max_node;
 	int		max_index;
 
+	if (!stack)
+		return (NULL);
 	current = stack;
 	max_index = current -> index;
 	max_node = stack;
@@ -38,6 +40,8 @@ int	get_node_index(t_node *stack, t_node *max_node)
 	t_node	*current;
 	int		index;
 
+	if (!stack || !max_node)
+		return (0);
 	current = stack;
 	index = 0;
 	while (current != NULL)
@@ -57,6 +61,8 @@ int	find_max_index(t_node *stack)
 	int		curr_index;
 	int		max_value;
 
+	if (!stack)
+		return (0);
 	current = stack;
 	max_value = current -> value;
 	max_index = 0;
@@ -81,6 +87,8 @@ int	find_min_index(t_node *stack)
 	int		curr_index;
 	int		min_value;
 
+	if (!stack)
+		return (0);
 	current = stack;
 	min_value = current -> value;
 	min_index = 0;
