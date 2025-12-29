@@ -6,7 +6,7 @@
 /*   By: mlaktaou <mlaktaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 12:21:20 by mlaktaou          #+#    #+#             */
-/*   Updated: 2025/11/16 12:25:09 by mlaktaou         ###   ########.fr       */
+/*   Updated: 2025/12/29 18:29:09 by mlaktaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		ft_strjoin(char **s1, char *s2);
 int		clean_storage(char **storage);
 int		read_and_check(int fd, char **buffer, char **storage);
 int		read_and_append(int fd, char **storage);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif

@@ -15,27 +15,27 @@
 
 int	operation_selector(t_node **stack_a, t_node **stack_b, char *line)
 {
-	if (strcmp(line, "sa\n") == 0)
+	if (ft_strcmp(line, "sa\n") == 0)
 		sa(stack_a, 0);
-	else if (strcmp(line, "sb\n") == 0)
+	else if (ft_strcmp(line, "sb\n") == 0)
 		sb(stack_b, 0);
-	else if (strcmp(line, "ss\n") == 0)
+	else if (ft_strcmp(line, "ss\n") == 0)
 		ss(stack_b, stack_a, 0);
-	else if (strcmp(line, "ra\n") == 0)
+	else if (ft_strcmp(line, "ra\n") == 0)
 		ra(stack_a, 0);
-	else if (strcmp(line, "rb\n") == 0)
+	else if (ft_strcmp(line, "rb\n") == 0)
 		rb(stack_b, 0);
-	else if (strcmp(line, "rr\n") == 0)
+	else if (ft_strcmp(line, "rr\n") == 0)
 		rr(stack_b, stack_a, 0);
-	else if (strcmp(line, "rra\n") == 0)
+	else if (ft_strcmp(line, "rra\n") == 0)
 		rra(stack_a, 0);
-	else if (strcmp(line, "rrb\n") == 0)
+	else if (ft_strcmp(line, "rrb\n") == 0)
 		rrb(stack_b, 0);
-	else if (strcmp(line, "rrr\n") == 0)
+	else if (ft_strcmp(line, "rrr\n") == 0)
 		rrr(stack_b, stack_a, 0);
-	else if (strcmp(line, "pa\n") == 0)
+	else if (ft_strcmp(line, "pa\n") == 0)
 		pa(stack_a, stack_b, 0);
-	else if (strcmp(line, "pb\n") == 0)
+	else if (ft_strcmp(line, "pb\n") == 0)
 		pb(stack_a, stack_b, 0);
 	else
 		return (write(2, "Error\n", 6), 0);

@@ -6,7 +6,7 @@
 /*   By: mlaktaou <mlaktaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 12:21:25 by mlaktaou          #+#    #+#             */
-/*   Updated: 2025/11/16 12:31:36 by mlaktaou         ###   ########.fr       */
+/*   Updated: 2025/12/29 18:28:28 by mlaktaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,14 @@ char	*get_next_line(int fd)
 	if (!clean_storage(&storage))
 		return (free(result), NULL);
 	return (result);
+}
+
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	size_t	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
