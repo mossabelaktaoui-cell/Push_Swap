@@ -55,6 +55,6 @@ void	rr(t_node **stack_a, t_node **stack_b, int print)
 	ra(stack_a, 0);
 	rb(stack_b, 0);
 	if (((*stack_a && (*stack_a)-> next) || (*stack_b && (*stack_b)-> next))
-	&& print)
+		&& print)
 		write(1, "rr\n", 3);
 }

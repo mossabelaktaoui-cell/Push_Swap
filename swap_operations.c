@@ -51,6 +51,6 @@ void	ss(t_node **stack_a, t_node **stack_b, int print)
 	sa(stack_a, 0);
 	sb(stack_b, 0);
 	if (((*stack_a && (*stack_a)->next) || (*stack_b && (*stack_b)->next))
-	&& print)
+		&& print)
 		write(1, "ss\n", 3);
 }

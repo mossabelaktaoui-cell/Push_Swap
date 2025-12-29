@@ -37,7 +37,7 @@ int		get_stack_size(t_node *stack);
 int		get_node_index(t_node *stack, t_node *max_node);
 int		duplicate_checker(t_node *stack);
 int		ft_lstadd_back(t_node **list, char *number);
-long		ft_atoi(const char *number);
+long	ft_atoi(const char *number);
 void	sort_array(int *array, int size);
 void	free_stack(t_node **stack);
 char	**ft_split(char const *s, char c);

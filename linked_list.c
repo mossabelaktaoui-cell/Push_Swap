@@ -49,7 +49,7 @@ int	ft_lstadd_back(t_node **stack, char *number)
 {
 	t_node	*new_node;
 	t_node	*current;
-	long		value;
+	long	value;
 
 	if (!stack || !number)
 		return (0);
