@@ -79,7 +79,8 @@ int	main(int argc, char **argv)
 	}
 	stack_b = NULL;
 	checker(&stack_a, &stack_b);
-	free_stack(&stack_b);
+	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
 }
+
