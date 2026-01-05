@@ -48,4 +48,3 @@ int	main(int argc, char **argv)
 	free_stack(&stack_b);
 	return (0);
 }
-

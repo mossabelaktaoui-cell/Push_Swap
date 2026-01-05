@@ -9,6 +9,7 @@
 /*   Updated: 2025/12/26 07:16:13 by mlaktaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	set_index(t_node *stack, int *array, int size)

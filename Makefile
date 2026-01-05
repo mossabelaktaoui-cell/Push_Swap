@@ -36,6 +36,9 @@ bonus: $(CHECKER)
 $(CHECKER): $(COMMON_OBJS) $(BONUS_OBJS)
 	$(CC) $(CFLAGS) $(COMMON_OBJS) $(BONUS_OBJS) -o $(CHECKER)
 
+%.o: %.c push_swap.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 	rm -f $(COMMON_OBJS) $(MANDATORY_OBJS) $(BONUS_OBJS)
 
@@ -45,3 +48,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all bonus clean fclean re
+.SECONDARY: $(MANDATORY_OBJS) $(BONUS_OBJS) $(COMMON_OBJS)

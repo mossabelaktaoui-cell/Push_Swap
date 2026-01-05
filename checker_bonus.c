@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "get_next_line.h"
 
 int	operation_selector(t_node **stack_a, t_node **stack_b, char *line)
 {
@@ -83,4 +82,3 @@ int	main(int argc, char **argv)
 	free_stack(&stack_b);
 	return (0);
 }
-
