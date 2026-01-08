@@ -1,14 +1,14 @@
 
 _This project has been created as part of the 42 curriculum by **mlaktaou**_
 # Push_swap
-## 💡 Overview
+## Overview
 **Push_swap** is a highly efficient sorting project at 42 School. The challenge is to sort a random set of integers using two stacks (`a` and `b`) and a limited set of operations, aiming for the minimum number of moves possible.
 
 This project includes:
 1. **push_swap**: Outputs the most efficient sequence of instructions to sort the numbers.
 2. **checker (Bonus)**: Validates if the sequence of instructions actually sorts the stack.
 
-## 🛠️ The Rules & Operations
+## The Rules & Operations
 The program starts with `stack_a` containing a random amount of unique negative and/or positive integers. `stack_b` starts empty.
 
 The available operations are:
@@ -27,7 +27,7 @@ The available operations are:
 
 ---
 
-## 🚀 Performance
+## Performance
 My implementation is optimized to meet the 42 Network requirements:
 
 * **3 numbers**: Max 3 moves.
@@ -35,7 +35,7 @@ My implementation is optimized to meet the 42 Network requirements:
 * **100 numbers**: Sorted in less than **700 moves** .
 * **500 numbers**: Sorted in less than **5500 moves** .
 
-## 🏗️ Instructions (Building the project)
+## Instructions (Building the project)
 
 To build the project, follow these steps:
 
@@ -62,7 +62,7 @@ To build the project, follow these steps:
 	    ARG="3 2 1"; ./push_swap $ARG | ./checker $ARG
     ```
 
-## 🧠 Sorting Strategy
+## Sorting Strategy
 
 My algorithm focuses on:
 
@@ -71,7 +71,7 @@ My algorithm focuses on:
 -   **Large Sort (100+ items):** Implemented an algorithm to calculate the lowest cost move for each element, ensuring we stay below the move limit for a full score.
     
 
-## 📚 Resources
+## Resources
 
 These are the resources that helped me understand the logic and complexity of the project:
 
@@ -89,7 +89,7 @@ These are the resources that helped me understand the logic and complexity of th
 
   * **Gemini AI** Used as a technical thought partner for understand the hard concepts, debugging complex memory leaks, optimizing the Makefile structure, and refining the logical flow of the sorting algorithm through iterative feedback.
   
-## ⚠️ Error Handling
+## Error Handling
 
 The program strictly validates input and will display `Error` if:
 
